@@ -12,35 +12,17 @@
          <div class="ui fluid raised card chatbox">
             <div class="content">
                <div class="ui feed">
+                <% @messages.each do |message|%>
                   <div class="event">
                      <div class="content">
                         <div class="summary">
-                           <em>Stephen</em>: Trump 2024
+                        <em><%= message.user.username %></em>: <%=message.body%></em>
                         </div>
                      </div>
                   </div>
-                  <div class="event">
-                     <div class="content">
-                        <div class="summary">
-                           <em>Rob</em>: MAGA!
-                        </div>
-                     </div>
-                  </div>
-                  <div class="event">
-                     <div class="content">
-                        <div class="summary">
-                           <em>Big Steve</em>: 5k bet FTW! 
-                        </div>
-                     </div>
-                  </div>
-                  <div class="event">
-                     <div class="content">
-                        <div class="summary">
-                           <em>Fee</em>: ugh nice!
-                        </div>
-                     </div>
-                  </div>
+                   <% end %>
                </div>
+            
          </div>
             <div class="extra content">
                   <form class="ui reply form">
