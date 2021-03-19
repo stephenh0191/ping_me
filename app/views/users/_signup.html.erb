@@ -3,8 +3,7 @@
   <div class="ui column very relaxed stackable grid">
     <div class="column">
       <div class="ui form">
-
-      <%= form_for(:session, html: {role: "form"}, url: login_path) do |f| %>
+       <%= form_for(:session, html: {role: "form"}, url: signup_path) do |f| %>
         <div class="field">
          <%= f.label :username, "Username" %>
           <div class="ui left icon input">
@@ -36,7 +35,7 @@
              </div>
          </div>
           <div class="mb-3">
-            <%= link_to '[ Cancel and return Home ]', root_path, class: "column text-info" %>
+            <%= link_to '[ Cancel and return Home ]', root_path, class: "text-info" %>
          </div>
       <% end %>
       </div>
@@ -44,5 +43,4 @@
         
     </div>
   </div>
-  
 </div>
