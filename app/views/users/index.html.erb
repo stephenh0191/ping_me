@@ -1,25 +1,40 @@
 <h4 class="ui center aligned medium icon header">
-  List of Users
-  <div class="ui section divider"></div>
-
+   List of Users
+   <div class="ui section divider"></div>
    <i class="circular teal comments outline icon"></i>
    <div class="ui section divider"></div>
-    Ping me!
+   Ping me!
 </h4>
-
-
-<div class="container">
-		<% @users.each do |user| %>
-		<div class="ui center">
-				<div class= "col-8 mt-4">
-					<div class="ui card text-center">
-						<div class="ui card title">
-							 <%= user.username %> %></div> 
-						</div>
-					</div>
-			
-				</div>
-		</div>
-		<%end%>
+<div class="ui center aligned medium icon header">
+   <div class="ui link cards">
+      <div class="card">
+         <div class="image">
+            <img src="/images/avatar1.png">
+         </div>
+         <div class="content">
+            <% @users.each do |user| %>
+            <div class="content">
+            	<div class="header">
+               <%= user.username %>
+           		</div>
+               <div class="meta">
+                  <a>Friends</a>
+               </div>
+               <div class="description">
+                   <%= user.username %> is an interior designer living in New York.
+               </div>
+            </div>
+            <div class="extra content">
+               <span class="right floated">
+               Joined <%= time_ago_in_words(user.created_at)%> ago,
+               </span>
+               <span>
+               <i class="user icon"></i>
+               75 Friends
+               </span>
+            </div>
+         </div>
+         <%end%>
+      </div>
+   </div>
 </div>
-
