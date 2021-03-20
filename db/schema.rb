@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_03_20_193035) do
-=======
-ActiveRecord::Schema.define(version: 2021_03_19_211522) do
->>>>>>> users-signup
 
   create_table "messages", force: :cascade do |t|
     t.text "body"
@@ -29,10 +25,7 @@ ActiveRecord::Schema.define(version: 2021_03_19_211522) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
-<<<<<<< HEAD
     t.string "image"
-=======
->>>>>>> users-signup
   end
 
 end
