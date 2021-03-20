@@ -14,8 +14,8 @@
          <div class="ui fluid raised card chatbox">
             <div class="content" id="messages">
                <div class="ui feed" id="message-container">
-                <%= render @messages %>
-               </div>
+                   <%= render @messages %>
+                </div>
             
             </div>
 
@@ -43,9 +43,8 @@
                <a class="item">
                Messages
                </a>
-               <a class="item">
-               Friends
-               </a>
+                              <%= link_to "Users", users_path,  class: "item"%> 
+
             </div>
          </div>
       </div>
