@@ -1,0 +1,31 @@
+<div class="ui center aligned medium icon header">
+   <div class="ui link cards">
+      <div class="card">
+           <%= image_tag "avatar3.png", class: "ui small image" %>
+         <div class="content">
+            <% @users.each do |user| %>
+            <div class="content">
+            	<div class="header">
+               <%= user.username %>
+           		</div>
+               <div class="meta">
+                  <a>Friends</a>
+               </div>
+               <div class="description">
+                   <%= user.username %> is an interior designer living in New York.
+               </div>
+            </div>
+            <div class="extra content">
+               <span class="right floated">
+               Joined <%= time_ago_in_words(user.created_at)%> ago,
+               </span>
+               <span>
+               <i class="user icon"></i>
+               75 Friends
+               </span>
+            </div>
+         </div>
+         <%end%>
+      </div>
+   </div>
+</div>
