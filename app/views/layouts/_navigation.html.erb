@@ -1,16 +1,21 @@
  
- <%= link_to "Catroom", root_path, class: "item"  %>
- 
-<a class="item">
-Messages
-</a>
+ <%= link_to "Chatroom", root_path, class: "item"  %>
+<%= link_to "Users", users_path, class: "item"%>
+<%= link_to "Messages",root_path, class: "item"%>
+
+
 <div class="right menu">
    <div class="ui dropdown item">
       Account <i class="dropdown icon"></i>
-
+    
       <div class="menu">
         <% if logged_in? %>
-          <%= link_to "Log out", logout_path , method: :delete, class: "item" %>
+      <%= link_to "View your Account", user_path(current_user), class: "item"%>
+      <%= link_to "Edit your Account", edit_user_path(current_user), class: "item"%>
+      <%= link_to "Delete profile", user_path(current_user), 
+          class: "item text-danger", method: :delete, data: { confirm: "Are you sure?" } %> 
+
+           <%= link_to "Log out", logout_path , method: :delete, class: "item" %>
 
         <%else %>
 
@@ -25,3 +30,4 @@ Messages
    </div>
    <%end%>
 </div>
+
