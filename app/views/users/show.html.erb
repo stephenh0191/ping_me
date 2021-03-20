@@ -1,0 +1,9 @@
+	<h1 class= "ui center aligned medium icon header "> <%= @user.username %>'s' profile </h1>
+
+<%if logged_in? && @user == current_user%>
+	<div class= "ui center aligned medium icon header">
+		<%= link_to "Edit your profile", edit_user_path(@user), class: "ui teal submit button" %>
+	</div>
+<%end%>
+<h3 class="ui center aligned medium icon heade">Chatroom</h3>
+ 

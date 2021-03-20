@@ -5,7 +5,8 @@ class ChatroomController < ApplicationController
   	@message = Message.new
     @messages = Message.custom_display
   end
+	def create
+	  	 
+	  end
 
-
-  
 end
