@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @image.name %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@image.picture.url, size: "250x250") if @image.picture? %>
+</p>
+
+<p>
+  <%= @image.user %>
+</p>
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>

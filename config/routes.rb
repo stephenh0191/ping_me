@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :images
   root 'chatroom#index' 	 
   post 'message', to: 'messages#create'
   

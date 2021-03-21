@@ -25,7 +25,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'semantic-ui-sass'
  
- 
+gem "carrierwave"
+gem "mini_magick"
+gem "fog"
 gem 'devise'
  
 gem 'jquery-rails'
