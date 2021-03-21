@@ -30,9 +30,7 @@
                <a class="active item">
                Home
                </a>
-               <a class="item">
-               Acccount
-               </a>
+              <%= link_to "Account", user_path(current_user), class: "item"%>
               <%= link_to "Users", users_path,  class: "item"%> 
             </div>
          </div>

@@ -21,7 +21,9 @@ scroll_bottom = function() {
     $('#messages').scrollTop($('#messages')[0].scrollHeight);
   }
 }
-
+$('.special.cards .image').dimmer({
+  on: 'hover'
+});
 submit_message = function() {
   $('#message_body').on('keydown', function(e) {
     if (e.keyCode == 13) {

@@ -1,12 +1,12 @@
 <div class="ui center aligned medium icon header">
    <div class="ui link cards">
       <div class="card">
-           <%= image_tag "avatar3.png", class: "ui small image" %>
+           <%= image_tag "avatar3.png", class: "ui small center image" %>
          <div class="content">
             <% @users.each do |user| %>
             <div class="content">
             	<div class="header">
-               <%= user.username %>
+               <%= link_to user.username,user %>
            		</div>
                <div class="meta">
                   <a>Friends</a>
@@ -24,10 +24,12 @@
                75 Friends
                </span>
             </div>
+               <div class="ui bottom attached button">
+                <i class="add icon"></i>
+                Add Friend
+              </div>
          </div>
          <%end%>
       </div>
-      
-
    </div>
 </div>
