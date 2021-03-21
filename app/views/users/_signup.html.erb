@@ -4,6 +4,7 @@
     <div class="column">
       <div class="ui form">
        <%= form_for(:session, html: {  role: "form"}, url: signup_path) do |f| %>
+       
         <div class="field">
          <%= f.label :username, "Username" %>
           <div class="ui left icon input">
@@ -27,13 +28,17 @@
             <i class="lock icon"></i>
           </div>
         </div>
-        <%= f.button "Signup", class: "ui teal submit button" %>
+        <%= f.submit(@user.new_record? ? "Sign up" : "Update Account", class:  "ui inverted blue button") %>
+          <% if logged_in? %>          
+        <%= link_to "Delete Account", user_path(current_user), 
+          class: "ui inverted red button", method: :delete, data: { confirm: "Are you sure?" } %> 
+          <%end%>
           <div class="field">
             <div class="ui checkbox">
                <input type="checkbox" tabindex="0" class="hidden">
                <label>I agree to the Terms and Conditions</label>
                 <div class="middle aligned column">
-                   <%= link_to "Cancel", root_path,  class: "ui teal submit button" %>
+                   <%= link_to "Cancel", root_path,  class: "ui teal button" %>
               </div>
          </div>
    

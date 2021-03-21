@@ -10,16 +10,13 @@
     
       <div class="menu">
         <% if logged_in? %>
-      <%= link_to "View your Account", user_path(current_user), class: "item"%>
-      <%= link_to "Edit your Account", edit_user_path(current_user), class: "item"%>
-      <%= link_to "Delete profile", user_path(current_user), 
-          class: "item text-danger", method: :delete, data: { confirm: "Are you sure?" } %> 
+      <%= link_to "View your Account", user_path(current_user), class: "ui inverted primary button"%>
+      <%= link_to "Edit your Account", edit_user_path(current_user), class: "ui inverted green button"%>
 
-           <%= link_to "Log out", logout_path , method: :delete, class: "item" %>
+           <%= link_to "Log out", logout_path , method: :delete, class: "ui  item " %>
 
         <%else %>
-
-        <%= link_to "Log in", login_path,  class: "item"%> 
+        <%= link_to "Log in", login_path,  class: "ui inverted secondary button"%> 
         <%end%>
        </div>
    </div>
