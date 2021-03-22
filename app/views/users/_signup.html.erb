@@ -4,7 +4,16 @@
     <div class="column">
       <div class="ui form">
       <%= form_with(model: @user, local: true) do |f| %>
-      
+
+       <div class="field">
+          <%= f.label(@user.new_record? ? "Upload Profile Pic" : "Update Profile Pic" ) %>
+          <div class="ui left icon input">
+            <%= @image = current_user %>
+            
+           </div>
+        </div>
+
+
         <div class="field">
          <%= f.label :username, "Username" %>
           <div class="ui left icon input">

@@ -44,3 +44,13 @@ submit_message();
 scroll_bottom();
 
 })
+
+const userArray = ["#card"];
+const user = document.querySelector("card");
+const button = document.querySelector("button");
+window.onload = () => generateRandomUsers(userArray);
+button.addEventListener("click", () => generateRandomUsers(userArray));
+function generateRandomUsers(array){
+  let randomNum = Math.floor(Math.random() * array.length); 
+  image.setAttribute("src", array[randomNum]);
+}

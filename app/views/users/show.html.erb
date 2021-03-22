@@ -1,6 +1,13 @@
   <h1 class= "ui center aligned medium icon header "> <%= @user.username %>'s' Profile </h1>
+
+
+            <%= @image = current_user %>
+
+
+
 <%if logged_in? && @user == current_user%>
   <div class= "ui center aligned medium icon header">
     <%= link_to "Edit your profile", edit_user_path(@user), class: "ui teal submit button" %>
   </div>
  <%end%>
+ 

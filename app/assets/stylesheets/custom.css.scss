@@ -14,3 +14,23 @@
 }
 .footer{
  }
+
+
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  padding-bottom: 25px;
+  flex-direction: column;
+}
+
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

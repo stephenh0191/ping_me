@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  before_action :set_image, only: %i[ show edit update destroy ]
+  before_action :set_image, only: [:show, :edit, :update, :destroy]
 
   # GET /images or /images.json
   def index
@@ -8,6 +8,7 @@ class ImagesController < ApplicationController
 
   # GET /images/1 or /images/1.json
   def show
+    @image.user = current_user
   end
 
   # GET /images/new
