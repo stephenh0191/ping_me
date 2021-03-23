@@ -7,11 +7,9 @@
 
        <div class="field">
           <%= f.label(@user.new_record? ? "Upload Profile Pic" : "Update Profile Pic" ) %>
-          <div class="ui left icon input">
-            <%= @image = current_user %>
-            
-           </div>
-        </div>
+               <div class="ui left icon input">
+                  <%= f.file_field :picture, placeholder: "Add a Profile picture" %>
+                </div>
 
 
         <div class="field">
@@ -52,6 +50,7 @@
          </div>
    
       <% end %>
+
       </div>
     </div>
         

@@ -1,5 +1,5 @@
 
-<h1>Images</h1>
+  <h1 class= "ui center aligned medium icon header "> <%= @user  %> My Photos </h1>
 
 <table>
   <thead>
@@ -20,6 +20,9 @@
         <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
+        <%= link_to 'Back', images_path,  class: "ui teal button" %>
+
   </tbody>
 </table>
 
