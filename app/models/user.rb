@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-has_many :messages
-has_many :images
+has_many :messages, dependent: :destroy
+has_many :images, dependent: :destroy
 before_save {self.email = email.downcase}
      
     validates :username, presence: true, 
