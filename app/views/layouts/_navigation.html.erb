@@ -1,8 +1,9 @@
  
-<%= link_to "Home", root_path, class: "item"  %>
+<%= link_to "Home", login_path, class: "item"  %>
+ <% if logged_in? %>
 <%= link_to "Users", users_path, class: "item"%>
 <%= link_to "Messages",root_path, class: "item"%>
-
+<%end%>
 
 <div class="right menu">
    <div class="ui dropdown item">
