@@ -23,9 +23,15 @@
       <%else%>
       <%= user.username %>
       <%end%>
-      <div class="meta">
-        <a>Friends</a>
-      </div>
+   <% for user in @users %>  
+      <div class="meta">  
+        <p>  
+          <strong><%= user.username %></strong>  
+          <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>  
+          <div class="clear"></div>  
+        </p>  
+      </div>  
+    <% end %>  
         <div class="description">
           <%= user.username %> is is an interior designer living in New York.
         </div>
@@ -82,10 +88,13 @@
       <span class="right floated">
         Joined in 2014
       </span>
+
       <span>
         <i class="user icon"></i>
         151 Friends
       </span>
+     
+
     </div>
 
   </div>

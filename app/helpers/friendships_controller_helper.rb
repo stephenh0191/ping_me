@@ -1,0 +1,2 @@
+module FriendshipsControllerHelper
+end
