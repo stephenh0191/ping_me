@@ -58,6 +58,5 @@ class UsersInfoController < ApplicationController
       redirect_to @userinfo
     end
   end
-
-end
+ 
 end
