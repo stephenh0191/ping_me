@@ -18,10 +18,10 @@
   <% end %>    
 </ul>  
  <p>Username: <%= @user.username %></p>  
-<p><%= link_to "Find Users", users_path %></p>  
+<p><%= link_to "Find Friends", users_path %></p>  
 
 
-<h2> Your Friends </h2>  
+<h2>Users who have added you</h2>  
 <ul>  
   <% for user in @user.inverse_friends %>  
   <li><%= user.username %></li>  
