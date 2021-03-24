@@ -1,15 +1,20 @@
 <div class="container">
+  <% @userinfos.each do |userinfo| %>
     <div class="row justify-content-md-center">
       <div class="col-8 mt-4">
         <div class="card text-center shadow mb-5 bg-white rounded">
           <div class="card-header font-italic">
-          </div>
+           
           <div class="card-body">
-             <%= link_to "View", usersinfo_path , class: "btn btn-outline-success" %>
-               <%= link_to "Edit", edit_usersinfo_path,  class: "btn btn-outline-info" %>
-              <%= link_to "Delete", usersinfo_path, class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
-           </div>
+            <h5 class="card-title"><%= link_to userinfo.title, userinfo_path(userinfo), class: "text-success" %></h5>
+            <%= link_to "View", userinfo_path(userinfo), class: "btn btn-outline-success" %>
+            <% if logged_in? && (userinfo.user == current_user || current_user.admin?) %>
+              <%= link_to "Edit", edit_userinfo_path(userinfo), class: "btn btn-outline-info" %>
+              <%= link_to "Delete", userinfo_path(userinfo), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
+  <% end %>
 </div>

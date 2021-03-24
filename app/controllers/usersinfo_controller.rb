@@ -21,7 +21,7 @@ class UsersinfoController < ApplicationController
     @usersinfo = Userinfo.new(usersinfo_params)
     @usersinfo.user = current_user
     if @usersinfo.save
-      flash[:notice] = "Article was created successfully."
+      flash[:notice] = "Info was created successfully."
       redirect_to usersinfo_path
     else
       render 'new'
@@ -30,7 +30,7 @@ class UsersinfoController < ApplicationController
 
   def update
     if @usersinfo.update(usersinfo_params)
-      flash[:notice] = "Article was updated successfully."
+      flash[:notice] = "Info was updated successfully."
       redirect_to usersinfo_path
     else
       render 'edit'

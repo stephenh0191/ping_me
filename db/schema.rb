@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_03_24_090128) do
-=======
 ActiveRecord::Schema.define(version: 2021_03_24_120828) do
->>>>>>> add_info_section_to_userprofile
 
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id"
