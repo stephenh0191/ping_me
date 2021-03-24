@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_03_24_090128) do
+=======
+ActiveRecord::Schema.define(version: 2021_03_24_120828) do
+>>>>>>> add_info_section_to_userprofile
 
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id"
@@ -33,6 +37,21 @@ ActiveRecord::Schema.define(version: 2021_03_24_090128) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "userinfos", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "Jobtitle"
+    t.string "passions"
+    t.string "company"
+    t.string "school"
+    t.string "contactinfo"
+    t.string "from"
+    t.string "eduction"
   end
 
   create_table "users", force: :cascade do |t|

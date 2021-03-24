@@ -4,9 +4,10 @@
  
 <%if logged_in? && @user == current_user%>
   <div class= "ui center aligned medium icon header">
-    <%= link_to "Edit your profile", edit_user_path(@user), class: "ui teal submit button" %>
-  </div>
+    <%= link_to "Edit your Account", edit_user_path(@user), class: "ui teal submit button" %>
+   </div>
  <%end%>
+<<<<<<< HEAD
 
 <h2>Your Friends</h2>  
 <ul>  
@@ -27,3 +28,6 @@
   <li><%= user.username %></li>  
   <% end %>  
 </ul>  
+=======
+ <%= render 'usersinfo/usersinfo' %>
+>>>>>>> add_info_section_to_userprofile
