@@ -1,0 +1,20 @@
+<h2 class="text-center mt-4"><%= @userinfo %></h2>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-8 mt-4">
+      <div class="card text-center shadow mb-5 bg-white rounded">
+        <div class="card-header font-italic">
+          by <%= @userinfo.user.username if @userinfo.user %>
+        </div>
+        <div class="card-body">
+          <div class="card-text text-left"><%= simple_format(@userinfo.description) %></div>
+          <% if logged_in? && (@userinfo.user == current_user || current_user.admin?) %>
+          <%= link_to "Edit", edit_userinfo_path(@userinfo), class: "btn btn-outline-info" %>
+          <%= link_to "Delete", userinfo_path(@userinfo), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
