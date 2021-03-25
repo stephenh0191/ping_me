@@ -1,13 +1,13 @@
  <div class="container">
   <% @userinfos.each do |userinfo| %>
-            <% if userinfo.user %>
-               <%= link_to userinfo.user.username, user_path(userinfo.user) %>
+            <% if userinfo.user.username %>
+               <%= link_to userinfo.user, user_path(userinfo.user) %>
             <% end %>
           <div class="card-body">
-            <h5 class="card-title"><%= link_to userinfo.title, usersinfo_path(usersinfo), class: "text-success" %></h5>
+        <h5 class="card-title"><%= link_to userinfo.title, usersinfo_path(usersinfo), class: "text-success" %></h5>
             <p class="card-text"><%= truncate(usersinfo.description, length: 100) %></p>
-            <%= link_to "View", usersinfo_path(article), class: "btn btn-outline-success" %>
-            <% if logged_in? && (article.user == current_user || current_user.admin?) %>
+            <%= link_to "View", usersinfo_path(userinfo), class: "btn btn-outline-success" %>
+            <% if logged_in? && (userinfo.user == current_user || current_user.admin?) %>
               <%= link_to "Edit", edit_usersinfo_path(usersinfo), class: "btn btn-outline-info" %>
               <%= link_to "Delete", usersinfo_path(usersinfo), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
             <% end %>

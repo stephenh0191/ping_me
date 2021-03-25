@@ -3,12 +3,15 @@ class UsersinfoController < ApplicationController
   before_action :require_user, except: [:show, :index]
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
+
   def show
-   end
+     end
 
   def index
    @usersinfos = Userinfo.all
-  end
+   @users = User.new
+
+   end
 
  def new
     @usersinfo = Userinfo.new
