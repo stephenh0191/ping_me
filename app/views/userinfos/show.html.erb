@@ -10,9 +10,9 @@
            
         <div class="card-body">
           <div class="card-text text-left"><%= simple_format(@usersinfo.description) %></div>
-          <% if logged_in? && (@userinfo.user == current_user || current_user.admin?) %>
-          <%= link_to "Edit", edit_usersinfo_path (@usersinfo), class: "btn btn-outline-info" %>
-          <%= link_to "Delete", usersinfo_path  (@usersinfo), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+          <% if logged_in? && (@usersinfo.user == current_user || current_user.admin?) %>
+          <%= link_to "Edit", edit_userinfo_path(@usersinfo), class: "btn btn-outline-info" %>
+          <%= link_to "Delete", userinfo_path(@usersinfo), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
           <% end %>
         </div>
          

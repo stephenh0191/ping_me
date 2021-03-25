@@ -4,14 +4,11 @@ class UsersController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
    def show
-      @users = User.all
-      @usersinfos = Userinfo.new
-
+    @userinfos = @user.userinfos.new
   end
 
   def index
     @users = User.all
-         @usersinfos = Userinfo.new
   end
   
 
@@ -25,7 +22,7 @@ class UsersController < ApplicationController
 	    if @user.save
  	      session[:user_id] = @user.id
 	      flash[:notice] = "Welcome to PingMe #{@user.username}, you have successfully signed up"
-	      redirect_to root_path
+	      redirect_to @user
 	    else
 	      render 'new'
 	    end

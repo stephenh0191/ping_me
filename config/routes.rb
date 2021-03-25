@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :images
   root 'chatroom#index' 	 
   post 'message', to: 'messages#create'
-   resources :usersinfo 
+   resources :userinfos 
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
   resources :users, except: [:new]
