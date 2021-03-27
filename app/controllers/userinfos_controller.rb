@@ -46,15 +46,14 @@ class UserinfosController < ApplicationController
   private
 
   def set_userinfo
-     @userinfo = Userinfo.new(params[:id])
+     @userinfo = Userinfo.new(id: params[:id])
   end
 
   def userinfo_params
     params.require(:userinfo).permit(:title, :description, :user_id, :eduction, :from, :contactinfo, :company, :passions, :Jobtitle )
-  end
-
+  end 
   def require_same_user
-    if current_user != @userinfo.user && !current_user.admin?
+    if current_user != @userinfo.user  
       flash[:alert] = "You can only edit or delete your own article"
       redirect_to  userinfos_path
     end

@@ -1,31 +1,40 @@
-  <h1 class= "ui center aligned medium icon header "> <%= @user.username %>'s' Profile </h1>
-
-
- 
+<h1 class= "ui center aligned medium icon header "> <%= @user.username %>'s' Profile </h1>
 <%if logged_in? && @user == current_user%>
-  <div class= "ui center aligned medium icon header">
-    <%= link_to "Edit your Account", edit_user_path(@user), class: "ui teal submit button" %>
-    <%= link_to "Edit your Profile", edit_userinfo_path(current_user), class: "ui inverted green button"%>
+<div class= "ui center aligned medium icon header">
+   <%= link_to "Edit your Account", edit_user_path(@user), class: "ui teal submit button" %>
+   <%= link_to "Edit your Profile", edit_userinfo_path(current_user), class: "ui inverted green button"%>
+</div>
+<%end%>
+
+<div class="row">
+   <div class="col-9">
+      <table class="ui very basic collapsing celled tabl">
+         <thead>
+            <tr>
+               <th scope="col">Yor Friends</th>
+               <th scope="col">Users who have added you</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th scope="row">
+                  <% for friendship in @user.friendships %>
+                  <%= friendship.friend.username %>  
+                  (<%= link_to "remove", friendship, :method => :delete %>)
+                  <% end %>    
+                  </ul>  
+                  <p>Username: <%= @user.username %></p>
+               </th>
+               <td>
+                  <ul>
+                     <% for user in @user.inverse_friends %>  
+                     <li><%= user.username %></li>
+                     <% end %>  
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
    </div>
- <%end%>
-
-<h2>Your Friends</h2>  
-<ul>  
-  <% for friendship in @user.friendships %>  
-  <li>  
-    <%= friendship.friend.username %>  
-    (<%= link_to "remove", friendship, :method => :delete %>)  
-  </li>  
-  <% end %>    
-</ul>  
- <p>Username: <%= @user.username %></p>  
-<p><%= link_to "Find Friends", users_path %></p>  
-
-
-<h2>Users who have added you</h2>  
-<ul>  
-  <% for user in @user.inverse_friends %>  
-  <li><%= user.username %></li>  
-  <% end %>  
-</ul>  
+</div>
 <%= render 'userinfos/usersinfo' %>
