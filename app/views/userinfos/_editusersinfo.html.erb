@@ -1,4 +1,8 @@
- 
+<div class="ui placeholder segment">
+  <%=render "layouts/flashmessages", obj: @userinfo%>
+  <div class="ui column very relaxed stackable grid">
+    <div class="column">
+      <div class="ui form"> 
  <%= form_with(model: @userinfo, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
        <div class="field">
           <div class="ui left icon input">

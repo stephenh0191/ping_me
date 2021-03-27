@@ -11,7 +11,7 @@
     
       <div class="menu">
         <% if logged_in? %>
-      <%= link_to "View your Account", user_path(current_user), class: "ui inverted primary button"%>
+      <%= link_to "View your Profile", user_path(current_user), class: "ui inverted primary button"%>
       <%= link_to "Edit your Account", edit_user_path(current_user), class: "ui inverted green button"%>
       <%= link_to "Edit your Profile", edit_userinfo_path(current_user), class: "ui inverted green button"%>
 

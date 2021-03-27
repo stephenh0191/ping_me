@@ -1,2 +1,4 @@
 <h1 class= "text-center mt-4"> Create Your Profile </h1>
-  <%= render 'signup' %>
+  <%= render 'editusersinfo' %>
+ <%= link_to "Delete Profile", userinfo_path(current_user), 
+          class: "ui inverted red button", method: :delete, data: { confirm: "Are you sure?" } %> 

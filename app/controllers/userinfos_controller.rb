@@ -5,7 +5,6 @@ class UserinfosController < ApplicationController
 
 
   def show
-       @userinfos = Userinfo.all
   end
 
   def index
@@ -14,9 +13,6 @@ class UserinfosController < ApplicationController
 
  def new
     @usersinfo = Userinfo.new
-  end
-
-  def edit
   end
 
   def create
@@ -28,6 +24,9 @@ class UserinfosController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
   end
 
   def update

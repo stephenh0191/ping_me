@@ -29,7 +29,7 @@ gem "carrierwave"
 gem "mini_magick"
 gem "fog"
 gem 'devise'
- 
+ gem 'pry-byebug'
 gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

@@ -4,12 +4,12 @@ class UsersController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
    def show
-    @userinfos = @user.userinfos.new
+    @userinfos = @user.userinfos
   end
 
   def index
     @users = User.all
-  end
+   end
   
 
   def new
