@@ -20,4 +20,14 @@ before_save {self.email = email.downcase}
                     uniqueness: {case_sensitive: false}, 
                     length: {minimum: 3, maximum: 25}
  	has_secure_password
+
+
+def count_friends
+	friends.all.count
+  end
+
+ 	
+
+  
+
 end

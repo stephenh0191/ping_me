@@ -3,7 +3,7 @@
        <div class="summary">
            <em><%= message.user.username %></em>: <%=message.body%>  
            	<br>
-            <%= time_ago_in_words(message.user.created_at)%> ago
+            <%= time_ago_in_words(message.created_at)%> ago
 
         </div>
     </div>
