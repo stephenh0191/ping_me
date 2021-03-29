@@ -12,6 +12,7 @@
   </body>
 </html>
        <% @users.each do |user| %>
+  <%if current_user != user %>
 
   <div class="card ">
     <div class="image">
@@ -26,11 +27,11 @@
        <div class="meta">  
         <p>  
           <button class="ui basic button">
-  <i class="icon user"></i>
-<%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>  </button>
+         <i class="icon user"></i>
 
-          <div class="clear"></div>  
-        </p>  
+          <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %>  </button>
+        </p> 
+  
       </div>  
          <div class="description">
           <%= user.username %> is is an interior designer living in New York.
@@ -47,5 +48,6 @@
     </div>    
   </div>
     <%end%>
+          <%end%> 
 </div>
  

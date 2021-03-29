@@ -26,8 +26,7 @@ def count_friends
 	friends.all.count
   end
 
- 	
-
+ 
   
 
 end
